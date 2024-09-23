@@ -1,0 +1,48 @@
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/mixins";
+@import "./partials/buttons";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  transition: all 0.1s;
+}
+
+body {
+  @include format();
+  font-family: $font-verdana;
+}
+
+nav {
+  background-color: $color-purple;
+
+  ul {
+    list-style-type: none;
+    @include format($padding: 1em);
+
+    li {
+      cursor: pointer;
+      @include radius-shadow-border();
+      @include format(0.5em, 0.5em 1em, $width: initial, $display: inline-block);
+    }
+  }
+}
+
+.para {
+  display: flex;
+}
+
+.container {
+  background-color: $color-beige;
+  padding: 1em;
+  > div {
+    @include format($padding: 0.5em);
+    transition: background-color 0.5s, transform 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  @include grid(3);
+}

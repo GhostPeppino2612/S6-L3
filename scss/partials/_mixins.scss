@@ -1,0 +1,26 @@
+@mixin format($margin: 0, $padding: 0, $font: 1.2em, $text-align: center, $width: 100%, $display: block) {
+    margin: $margin;
+    padding: $padding;
+    font-size: $font;
+    text-align: $text-align;
+    width: $width;
+    display: $display;
+}
+
+@mixin radius-shadow-border($radius: 10px, $shadow: 2px 2px 2px 1px $color-grey, $border: 1px solid black) {
+    border-radius: $radius;
+    box-shadow: $shadow;
+    border: $border;
+}
+
+@mixin grid($num) {
+    .div-flex {
+        display: flex;
+        justify-content: space-around;
+    @for $i from 1 through $num {
+            .inline-div-#{$i} {
+                padding: 1em;
+            }
+        }
+    }
+}
